@@ -1,0 +1,38 @@
+// Можно создавать свои переменные
+$i: 1;
+$bgc-black: black;
+// Можно вкладывать селекторы друг в друга, если это соответствует верстке
+.numbers {
+	li {
+		color: rgb(7, 236, 38);
+	}
+}
+// Можно создавать @mixin, это блоки с определенными стилями
+// Так же можно использовать переменные в виде аргументов для mixin
+@mixin weight-bold($fs) {
+	font-weight: 700;
+	font-size: $fs;
+}
+
+li {
+	@include weight-bold(22px)
+}
+// Можно писать ветвления с помощью if..else
+@mixin color-text($color) {
+	@if $color == danger {
+		font-size: 60px;
+	}
+	@else {
+		display: none;
+	}
+}
+
+.number-9 {
+	@include color-text(2);
+}
+
+// Циклы for, each, while
+
+// export/import между файлами .scss
+
+// @extend параметр, позволяющий копировать свойства другого селектора для другого селектора
